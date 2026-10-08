@@ -5,9 +5,9 @@ const COLORS = {
     dim: "#4A505A",
     blocked: "#F2564F",
     blockedBg: "#3A1A1A",
-    done: "#E5A12E",
-    doneBg: "#33280F",
-    working: "#5BA8F2",
+    done: "#4F9DF7",
+    doneBg: "#0F2238",
+    working: "#4FC1B0",
 };
 
 const SANS = "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif";

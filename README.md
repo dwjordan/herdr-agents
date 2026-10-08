@@ -3,7 +3,7 @@
 A Stream Deck tile that lights up when a coding agent managed by [herdr](https://herdr.dev) is waiting on you, and shows which workspace.
 
 - **Red, flashing** — an agent is blocked on a prompt or permission.
-- **Amber, flashing** — an agent finished while you weren't looking.
+- **Blue, flashing** — an agent finished while you weren't looking.
 - **Dark** — nothing waiting; shows how many agents are working.
 
 Press to jump to the agent that has waited longest (blocked first). Press again to cycle through the rest.
