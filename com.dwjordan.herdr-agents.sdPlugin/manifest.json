@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.dwjordan.herdr-agents",
+  "Name": "Herdr Agents",
+  "Version": "0.1.0.0",
+  "Author": "Dave Jordan",
+  "Description": "Flashes when a herdr-managed coding agent is blocked or finished and waiting on you, and shows which workspace. Press to jump to it.",
+  "Category": "Herdr Agents",
+  "CategoryIcon": "imgs/plugin/category-icon",
+  "Icon": "imgs/plugin/plugin-icon",
+  "SDKVersion": 2,
+  "CodePath": "bin/plugin.js",
+  "Nodejs": {
+    "Version": "20"
+  },
+  "Software": {
+    "MinimumVersion": "6.5"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Actions": [
+    {
+      "Name": "Waiting Agents",
+      "UUID": "com.dwjordan.herdr-agents.waiting",
+      "Icon": "imgs/actions/agents/icon",
+      "Tooltip": "Lights up when an agent is waiting on you. Press to jump to the next one.",
+      "PropertyInspectorPath": "ui/agents.html",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/actions/agents/key",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ]
+}

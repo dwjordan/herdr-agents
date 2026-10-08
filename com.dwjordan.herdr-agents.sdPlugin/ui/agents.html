@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Waiting Agents</title>
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Provider">
+			<sdpi-select setting="provider" default="all">
+				<option value="all">All agents</option>
+				<option value="claude">Claude</option>
+				<option value="codex">Codex</option>
+				<option value="cursor">Cursor</option>
+			</sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Workspace">
+			<sdpi-textfield setting="workspace" placeholder="e.g. my-app — blank for all"></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item label="Count finished">
+			<sdpi-checkbox setting="includeDone" default="true" label="Include agents that finished while unseen"></sdpi-checkbox>
+		</sdpi-item>
+		<sdpi-item label="Flash">
+			<sdpi-checkbox setting="flash" default="true" label="Flash while anything is waiting"></sdpi-checkbox>
+		</sdpi-item>
+		<sdpi-item label="Bring forward">
+			<sdpi-textfield setting="activateApp" default="Ghostty" placeholder="App name, blank to skip"></sdpi-textfield>
+		</sdpi-item>
+		<sdpi-item label="Note">
+			<sdpi-description>
+				Red = blocked on a prompt or permission. Amber = finished while you weren't looking.
+				Press to focus the agent that has waited longest; press again to cycle.
+			</sdpi-description>
+		</sdpi-item>
+	</body>
+</html>

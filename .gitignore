@@ -1,0 +1,8 @@
+node_modules/
+dist/
+logs/
+*.log
+com.dwjordan.herdr-agents.sdPlugin/bin/
+com.dwjordan.herdr-agents.sdPlugin/logs/
+.DS_Store
+.claude/
