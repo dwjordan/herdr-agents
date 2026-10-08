@@ -4,7 +4,11 @@ import path from "node:path";
 
 const SOCKET_PATH = process.env.HERDR_SOCKET_PATH || path.join(os.homedir(), ".config/herdr/herdr.sock");
 
-/** Events that can change which agents exist or how their workspace is labelled. */
+/**
+ * Events that can change which agents exist, how their workspace is labelled, or
+ * whether a finished agent has been seen: switching to a tab marks its panes seen
+ * (`done` -> `idle`) without an agent status event.
+ */
 const LIFECYCLE_EVENTS = [
     "pane.created",
     "pane.closed",
@@ -14,6 +18,9 @@ const LIFECYCLE_EVENTS = [
     "workspace.created",
     "workspace.renamed",
     "workspace.closed",
+    "workspace.focused",
+    "tab.focused",
+    "pane.focused",
 ];
 
 /**
