@@ -30,7 +30,9 @@ Per tile, in the Property Inspector:
 
 ## How it works
 
-Polls `herdr agent list` and `herdr workspace list` every 2s. Looks for `herdr` in `~/.local/bin`, `/opt/homebrew/bin` and `/usr/local/bin`, since Stream Deck doesn't pass your shell's `PATH`.
+Subscribes to herdr's event stream (`events.subscribe` on `~/.config/herdr/herdr.sock`) and re-reads `herdr agent list` / `herdr workspace list` whenever an event arrives, so the tile updates as soon as herdr sees a change. Events are treated as invalidation signals rather than applied directly, as herdr's docs recommend. If the stream drops it falls back to polling every 2s and resubscribes with backoff; while connected, a 15s poll catches seen-state changes that emit no event.
+
+Looks for `herdr` in `~/.local/bin`, `/opt/homebrew/bin` and `/usr/local/bin`, since Stream Deck doesn't pass your shell's `PATH`.
 
 Focusing runs `herdr agent focus` then `herdr tab focus`. `agent focus` alone selects the pane and marks it seen, but only moves the server's focus — attached herdr clients follow `workspace`/`tab`/`pane focus` only.
 
